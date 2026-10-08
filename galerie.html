@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Galerie - Oasis Studio Coworking</title>
+  <meta name="description" content="Découvrez les photos d'Oasis Studio Coworking à Mankambahiny : bureaux, salle de réunion et espaces communs.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Unbounded:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="entete">
+    <div class="conteneur">
+      <a href="index.html"><img src="images/logo.png" alt="Oasis Studio Coworking"></a>
+      <button type="button" class="burger-btn" id="burgerBtn" aria-label="Menu de navigation" aria-expanded="false">
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+      </button>
+      <nav id="navMenu">
+        <a href="index.html#espace">L'espace</a>
+        <a href="index.html#formules">Formules</a>
+        <a href="index.html#disponibilites">Disponibilités</a>
+        <a href="galerie.html" style="color:var(--rouge);">Galerie</a>
+        <a href="index.html#contact" class="bouton">Prendre rendez-vous</a>
+      </nav>
+      <div class="menu-overlay" id="menuOverlay"></div>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="conteneur">
+        <div class="badge-tag"> En images</div>
+        <h2>Galerie d'Oasis Studio</h2>
+        <p style="color: var(--texte-secondaire); margin-top: 0.4rem; max-width: 38rem;">
+          Découvrez nos espaces de travail, notre salle de réunion équipée et l'ambiance lumineuse propice à votre concentration. Cliquez sur une image pour l'agrandir.
+        </p>
+
+        <div class="galerie-grille" id="galerieGrille">
+          <!-- Chargement dynamique depuis Supabase -->
+          <div class="galerie-carte" style="opacity:0.6;">
+            <img src="images/fond.jpg" alt="Chargement de la galerie..." loading="lazy">
+          </div>
+        </div>
+
+        <div class="note" style="margin-top: 2.5rem;">
+           <strong>Envie de visiter en vrai ?</strong> Appelez-nous au <a href="tel:+261347480831" style="font-weight:700; color:var(--rouge);">+261 34 74 808 31</a> ou passez directement à Manakambahiny pour visiter nos bureaux.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- LIGHTBOX PLEIN ECRAN -->
+  <dialog id="modalLightbox" class="modal-lightbox">
+    <div class="lightbox-contenu">
+      <button type="button" class="lightbox-fermer" id="fermerLightbox" aria-label="Fermer la vue plein écran">&times;</button>
+      <img id="lightboxImg" src="" alt="Vue agrandie">
+      <div class="lightbox-legende" id="lightboxLegende"></div>
+    </div>
+  </dialog>
+
+  <footer class="pied">
+    <div class="conteneur">
+      <img src="images/logo-blanc.png" alt="Oasis Studio Coworking">
+      <p>&copy; 2026 Oasis Studio Coworking. Manakambahiny, Antananarivo.</p>
+    </div>
+  </footer>
+
+  <script type="module">
+    import { db } from './js/supabase-client.js';
+
+    const grille = document.getElementById('galerieGrille');
+    const lightboxModal = document.getElementById('modalLightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxLegende = document.getElementById('lightboxLegende');
+    const fermerLightboxBtn = document.getElementById('fermerLightbox');
+
+    function ouvrirLightbox(url, legende) {
+      lightboxImg.src = url;
+      lightboxLegende.textContent = legende || "";
+      if (typeof lightboxModal.showModal === "function") {
+        lightboxModal.showModal();
+      }
+    }
+
+    if (fermerLightboxBtn) {
+      fermerLightboxBtn.addEventListener('click', () => lightboxModal.close());
+    }
+    if (lightboxModal) {
+      lightboxModal.addEventListener('click', (e) => {
+        if (e.target === lightboxModal) lightboxModal.close();
+      });
+    }
+
+    async function chargerGalerie() {
+      let photos = [];
+      try {
+        const { data, error } = await db.from('galerie').select('*').order('ordre');
+        if (!error && data && data.length > 0) {
+          photos = data;
+        }
+      } catch (e) {
+        console.warn("Supabase galerie non disponible :", e);
+      }
+
+      if (photos.length === 0) {
+        photos = [
+          { url: 'images/fond.jpg', legende: 'Espace de travail principal d\'Oasis Studio' }
+        ];
+      }
+
+      grille.innerHTML = photos.map(img => `
+        <figure class="galerie-carte" tabindex="0" role="button" aria-label="Agrandir la photo">
+          <img src="${img.url}" alt="${img.legende ?? 'Photo de l\'espace'}" loading="lazy">
+          <div class="galerie-legende">${img.legende ?? 'Agrandir la photo 🔍'}</div>
+        </figure>
+      `).join('');
+
+      // Attacher les clics pour la Lightbox
+      const cartes = grille.querySelectorAll('.galerie-carte');
+      cartes.forEach((carte, index) => {
+        const item = photos[index];
+        carte.addEventListener('click', () => ouvrirLightbox(item.url, item.legende));
+        carte.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            ouvrirLightbox(item.url, item.legende);
+          }
+        });
+      });
+    }
+
+    chargerGalerie();
+
+    // Menu Mobile
+    const burgerBtn = document.getElementById("burgerBtn");
+    const navMenu = document.getElementById("navMenu");
+    const menuOverlay = document.getElementById("menuOverlay");
+
+    function toggleMenu() {
+      const estOuvert = navMenu.classList.toggle("ouvert");
+      burgerBtn.classList.toggle("actif", estOuvert);
+      menuOverlay.classList.toggle("actif", estOuvert);
+      burgerBtn.setAttribute("aria-expanded", estOuvert);
+      document.body.style.overflow = estOuvert ? "hidden" : "";
+    }
+
+    function fermerMenu() {
+      navMenu.classList.remove("ouvert");
+      burgerBtn.classList.remove("actif");
+      menuOverlay.classList.remove("actif");
+      burgerBtn.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
+    }
+
+    if (burgerBtn) burgerBtn.addEventListener("click", toggleMenu);
+    if (menuOverlay) menuOverlay.addEventListener("click", fermerMenu);
+    if (navMenu) {
+      navMenu.querySelectorAll("a").forEach(lien => lien.addEventListener("click", fermerMenu));
+    }
+  </script>
+</body>
+</html>

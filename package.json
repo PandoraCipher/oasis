@@ -1,0 +1,8 @@
+{
+  "name": "oasis-studio-coworking",
+  "version": "1.0.0",
+  "description": "Site vitrine avec disponibilites et galerie Supabase pour Oasis Studio Coworking",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

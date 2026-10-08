@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Oasis Studio Coworking - Manakambahiny, Antananarivo</title>
+  <meta name="description" content="Espace de coworking haut de gamme à Mankambahiny, Antananarivo : 4 bureaux individuels, salle de réunion équipée, formules souples et disponibilités en direct.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Unbounded:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="entete">
+    <div class="conteneur">
+      <a href="index.html"><img src="images/logo.png" alt="Oasis Studio Coworking"></a>
+      <button type="button" class="burger-btn" id="burgerBtn" aria-label="Menu de navigation" aria-expanded="false">
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+      </button>
+      <nav id="navMenu">
+        <a href="#espace">L'espace</a>
+        <a href="#formules">Formules</a>
+        <a href="#disponibilites">Disponibilités</a>
+        <a href="galerie.html">Galerie</a>
+        <a href="#contact" class="bouton">Prendre rendez-vous</a>
+      </nav>
+      <div class="menu-overlay" id="menuOverlay"></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="conteneur">
+        <div class="badge-tag"> Coworking à Antananarivo</div>
+        <h1>Votre espace de travail à <span>Manakambahiny</span></h1>
+        <p>Quatre bureaux calmes, une salle de réunion équipée et du bon café. Consultez les disponibilités en temps réel, comparez nos formules et venez visiter.</p>
+        <div class="actions">
+          <a href="#disponibilites" class="bouton">Voir les disponibilités en direct</a>
+          <a href="#contact" class="bouton bouton-contour">Prendre rendez-vous</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <strong>4 Postes</strong>
+            <span>Espaces individuels calmes</span>
+          </div>
+          <div class="hero-stat">
+            <strong>Salle TV 49"</strong>
+            <span>24 h incluses par mois</span>
+          </div>
+          <div class="hero-stat">
+            <strong>Fibre & Café</strong>
+            <span>Sur place chaque jour</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="but reveal" id="but">
+      <div class="conteneur">
+        <div>
+          <h2>Un coworking à taille humaine, pour travailler sereinement</h2>
+        </div>
+        <div>
+          <p>Oasis Studio Coworking met à votre disposition des postes de travail dans un lieu confidentiel et équipé, au cœur d'Antananarivo.</p>
+          <p>Ce site vous permet de voir en un coup d'œil les postes disponibles, de réserver en direct, de découvrir les lieux en photos et d'organiser votre visite.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="espace" class="reveal">
+      <div class="conteneur">
+        <h2>L'espace pensé pour votre productivité</h2>
+        <div class="espace-liste">
+          <div class="espace-carte">
+            <h3>4 bureaux individuels</h3>
+            <ul>
+              <li>Postes de travail calmes & lumineux</li>
+              <li>Mobilier ergonomique et prises dédiées</li>
+              <li>Atmosphère studieuse sans agitation</li>
+            </ul>
+          </div>
+          <div class="espace-carte">
+            <h3>Salle de réunion</h3>
+            <ul>
+              <li>Écran TV 49 pouces pour visioconférences</li>
+              <li>Grand & petit tableaux blancs</li>
+              <li>Idéal pour vos rendez-vous clients</li>
+            </ul>
+          </div>
+          <div class="espace-carte">
+            <h3>Services inclus</h3>
+            <ul>
+              <li>Un café offert chaque jour</li>
+              <li>Cantine cuisinée maison (en option)</li>
+              <li>Connexion internet très haut débit</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="formules reveal" id="formules">
+      <div class="conteneur">
+        <h2>Nos formules transparentes</h2>
+        <div class="formules-grille">
+          <article class="formule">
+            <h3>Formule Basic</h3>
+            <p class="prix">170 000 Ar <small>par poste / premier mois</small></p>
+            <ul>
+              <li>Un poste de travail dédié</li>
+              <li>Salle de réunion incluse : 24 h par mois</li>
+              <li>Café offert chaque jour</li>
+              <li>Accès aux espaces communs</li>
+            </ul>
+            <div style="margin-top:auto; padding-top:1rem;">
+              <a href="#contact" class="bouton bouton-contour" style="width: 100%; border-color: rgba(255,255,255,0.3);">Choisir Basic</a>
+            </div>
+          </article>
+
+          <article class="formule vedette">
+            <span class="badge-vedette">Recommandé</span>
+            <h3>Formule Équipée</h3>
+            <p class="prix">235 000 Ar <small>par poste / premier mois</small></p>
+            <ul>
+              <li><strong>Tout ce qui est inclus dans la formule Basic</strong></li>
+              <li>1 grand écran de 30 pouces dédié à votre poste</li>
+              <li>Accès à l'imprimante commune</li>
+              <li>Idéal pour développeurs, designers & indépendants</li>
+            </ul>
+            <div style="margin-top:auto; padding-top:1rem;">
+              <a href="#contact" class="bouton" style="width: 100%;">Choisir la Formule Équipée</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="option-box">
+          <div>
+            <strong>Option Cantine le midi (non incluse dans les formules)</strong>
+            <p style="font-size:0.92rem; color: #a3acb9; margin-top:0.2rem;">Repas équilibré préparé chaque midi sur place pour gagner du temps.</p>
+          </div>
+          <span style="font-family: var(--titre); font-size: 1.35rem; color: var(--blanc);">155 000 Ar <small style="font-size: 0.85rem; font-family: var(--corps); color: #888;">/ mois</small></span>
+        </div>
+      </div>
+    </section>
+
+    <section id="disponibilites" class="reveal">
+      <div class="conteneur">
+        <div class="dispo-en-tete">
+          <div>
+            <h2>Disponibilités des postes</h2>
+            <p style="color: var(--texte-secondaire); margin-top: 0.3rem;">Visualisez en temps réel et cliquez sur un créneau <strong>Libre</strong> pour réserver directement.</p>
+          </div>
+          <div class="dispo-statut-live">
+            <span class="pulse-dot"></span>
+            <span>Synchronisé en direct</span>
+          </div>
+        </div>
+
+        <div class="defile">
+          <table id="grille">
+            <!-- Rendu automatique via Supabase -->
+          </table>
+        </div>
+
+        <div class="legende-container">
+          <div class="legende-item">
+            <!-- <span class="pastille-exemple" style="background: var(--vert);"></span> -->
+            <!-- <span><strong>Libre</strong> : Cliquez pour réserver ce créneau</span> -->
+          </div>
+          <div class="legende-item">
+            <span class="pastille-exemple" style="background: var(--rouge-occupe);"></span>
+            <span><strong>Occupé</strong> : Déjà réservé pour ce mois</span>
+          </div>
+        </div>
+
+        <p class="note">
+           <strong>Astuce :</strong> La salle de réunion est accessible aux membres (24 h / mois incluses). Vous pouvez aussi nous appeler directement au <a href="tel:+261347480831" style="font-weight:700; color:var(--rouge);">+261 34 74 808 31</a> pour toute question.
+        </p>
+      </div>
+    </section>
+
+    <section class="contact reveal" id="contact">
+      <div class="conteneur">
+        <div>
+          <h2>Prendre rendez-vous</h2>
+          <p style="color: var(--texte-secondaire); margin-bottom: 0.5rem;">Venez visiter l'espace et échanger avec nous sur vos projets.</p>
+          <p class="telephone">+261 34 74 808 31</p>
+          <div style="display:flex; gap:0.8rem; flex-wrap:wrap;">
+            <a class="bouton" href="tel:+261347480831"> Appeler pour une visite</a>
+            <a class="bouton" href="https://wa.me/261347480831?text=Bonjour%20Oasis%20Studio%20Coworking,%20je%20souhaite%20prendre%20rendez-vous%20pour%20visiter%20l'espace." target="_blank" rel="noopener" style="background:#25d366; border-color:#25d366;"> WhatsApp</a>
+          </div>
+        </div>
+        <div>
+          <h2>Où nous trouver</h2>
+          <address>Mankambahiny<br>Antananarivo, Madagascar</address>
+          <p style="color:var(--texte-secondaire); margin-bottom: 1.2rem;">Un quartier accessible et agréable, propice à la concentration.</p>
+          <a class="bouton bouton-contour" style="border-color:var(--noir); color:var(--noir);" href="https://www.google.com/maps/search/?api=1&amp;query=Mankambahiny+Antananarivo" target="_blank" rel="noopener">Voir sur Google Maps ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL DE RESERVATION RAPIDE -->
+  <dialog id="modalReservation" class="modal-reservation">
+    <div class="modal-header">
+      <h3 id="modalTitre">Réserver un poste</h3>
+      <button type="button" class="modal-fermer" id="fermerModal" aria-label="Fermer">&times;</button>
+    </div>
+    <div class="modal-body">
+      <p>Confirmez votre réservation pour ce poste auprès de notre équipe :</p>
+      <div class="modal-recap">
+        <span id="recapPoste" style="font-weight:700; color:var(--noir);">Poste</span>
+        <span id="recapMois" style="color:var(--rouge); font-weight:700;">Mois</span>
+      </div>
+      <div class="modal-actions">
+        <a id="btnWhatsappModal" href="#" target="_blank" rel="noopener" class="bouton" style="background:#25d366; border-color:#25d366; color:#fff;">
+           Confirmer via WhatsApp
+        </a>
+        <a href="tel:+261347480831" class="bouton bouton-contour" style="border-color:var(--gris-bordure); color:var(--noir);">
+           Appeler au +261 34 74 808 31
+        </a>
+      </div>
+    </div>
+  </dialog>
+
+  <footer class="pied">
+    <div class="conteneur">
+      <img src="images/logo-blanc.png" alt="Oasis Studio Coworking">
+      <p>&copy; 2026 Oasis Studio Coworking. Manakambahiny, Antananarivo.</p>
+    </div>
+  </footer>
+
+  <script type="module">
+    import { db } from './js/supabase-client.js';
+
+    const modal = document.getElementById("modalReservation");
+    const fermerModalBtn = document.getElementById("fermerModal");
+    const recapPoste = document.getElementById("recapPoste");
+    const recapMois = document.getElementById("recapMois");
+    const btnWhatsappModal = document.getElementById("btnWhatsappModal");
+
+    function ouvrirModalReservation(posteNom, moisNom) {
+      recapPoste.textContent = posteNom;
+      recapMois.textContent = moisNom;
+      const message = encodeURIComponent(`Bonjour Oasis Studio Coworking, je souhaite réserver le ${posteNom} pour le mois de ${moisNom}.`);
+      btnWhatsappModal.href = `https://wa.me/261347480831?text=${message}`;
+      if (typeof modal.showModal === "function") {
+        modal.showModal();
+      } else {
+        window.open(btnWhatsappModal.href, '_blank');
+      }
+    }
+
+    if (fermerModalBtn) {
+      fermerModalBtn.addEventListener("click", () => modal.close());
+    }
+    if (modal) {
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) modal.close();
+      });
+    }
+
+    async function chargerDisponibilites() {
+      const NB_MOIS = 6;
+      const maintenant = new Date();
+      const mois = [];
+      for (let i = 0; i < NB_MOIS; i++) {
+        const d = new Date(maintenant.getFullYear(), maintenant.getMonth() + i, 1);
+        mois.push({
+          cle: d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0"),
+          nom: d.toLocaleDateString("fr-FR", { month: "long", year: "numeric" })
+        });
+      }
+
+      const table = document.getElementById("grille");
+      table.innerHTML = "";
+
+      let postesData = [];
+      let disposData = [];
+
+      try {
+        const [resPostes, resDispos] = await Promise.all([
+          db.from('postes').select('*').order('id'),
+          db.from('disponibilites').select('*')
+        ]);
+        if (!resPostes.error && resPostes.data && resPostes.data.length > 0) {
+          postesData = resPostes.data;
+          disposData = resDispos.data || [];
+        }
+      } catch (err) {
+        console.warn("Supabase indisponible, chargement des données par défaut :", err);
+      }
+
+      // Données de secours
+      if (postesData.length === 0) {
+        postesData = [
+          { id: 1, nom: "Poste 1" },
+          { id: 2, nom: "Poste 2" },
+          { id: 3, nom: "Poste 3" },
+          { id: 4, nom: "Poste 4" }
+        ];
+        const m0 = mois[0].cle;
+        const m1 = mois[1] ? mois[1].cle : '';
+        disposData = [
+          { poste_id: 1, mois: m0, statut: 'occupe' },
+          { poste_id: 1, mois: m1, statut: 'occupe' },
+          { poste_id: 3, mois: m0, statut: 'occupe' }
+        ];
+      }
+
+      // Construire l'objet occupations dynamiquement
+      const occupations = {};
+      postesData.forEach(p => {
+        occupations[p.nom] = disposData
+          .filter(d => d.poste_id === p.id && d.statut === 'occupe')
+          .map(d => d.mois);
+      });
+
+      // En-tête
+      const tete = table.createTHead().insertRow();
+      ["Poste"].concat(mois.map(m => m.nom)).forEach(function (t) {
+        const th = document.createElement("th");
+        th.scope = "col";
+        th.textContent = t;
+        tete.appendChild(th);
+      });
+
+      // Corps du tableau avec pastilles modernes & clics
+      const corps = table.createTBody();
+      postesData.forEach(function (p) {
+        const tr = corps.insertRow();
+        const th = document.createElement("th");
+        th.scope = "row";
+        th.textContent = p.nom;
+        tr.appendChild(th);
+
+        mois.forEach(function (m) {
+          const td = tr.insertCell();
+          const pris = (occupations[p.nom] || []).includes(m.cle);
+          
+          const pill = document.createElement("span");
+          pill.className = "cellule-statut " + (pris ? "occupe" : "libre");
+          pill.textContent = pris ? "Occupé" : "Libre ➜";
+
+          if (!pris) {
+            // pill.title = `Réserver le ${p.nom} pour ${m.nom}`;
+            // pill.addEventListener("click", () => {
+            //   ouvrirModalReservation(p.nom, m.nom);
+            // });
+          }
+
+          td.appendChild(pill);
+        });
+      });
+    }
+
+    chargerDisponibilites();
+
+    // Menu Mobile
+    const burgerBtn = document.getElementById("burgerBtn");
+    const navMenu = document.getElementById("navMenu");
+    const menuOverlay = document.getElementById("menuOverlay");
+
+    function toggleMenu() {
+      const estOuvert = navMenu.classList.toggle("ouvert");
+      burgerBtn.classList.toggle("actif", estOuvert);
+      menuOverlay.classList.toggle("actif", estOuvert);
+      burgerBtn.setAttribute("aria-expanded", estOuvert);
+      document.body.style.overflow = estOuvert ? "hidden" : "";
+    }
+
+    function fermerMenu() {
+      navMenu.classList.remove("ouvert");
+      burgerBtn.classList.remove("actif");
+      menuOverlay.classList.remove("actif");
+      burgerBtn.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
+    }
+
+    if (burgerBtn) burgerBtn.addEventListener("click", toggleMenu);
+    if (menuOverlay) menuOverlay.addEventListener("click", fermerMenu);
+    if (navMenu) {
+      navMenu.querySelectorAll("a").forEach(lien => lien.addEventListener("click", fermerMenu));
+    }
+
+    // Micro-animation : Scroll Reveal
+    const elementsToReveal = document.querySelectorAll(".reveal");
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("revealed");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      elementsToReveal.forEach((el) => observer.observe(el));
+    } else {
+      elementsToReveal.forEach((el) => el.classList.add("revealed"));
+    }
+  </script>
+</body>
+</html>
